@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Search = () => {
+const Search = ({search, handleChange, onClick}) => {
   return (
     <div>
-      <input type='text' />
-      <button>Search</button>
+      <input type='text' placeholder='Find your Jewel' value={search} onChange={handleChange} />
+      <button onClick={onClick}>Search</button>
     </div>
   )
 }

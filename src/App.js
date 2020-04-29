@@ -3,15 +3,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
+import Search from './components/Search';
 import Axios from "axios";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      resultsIds: [],
+      resultsIds: null,
       results :[],
-      search: "sunflowers",
+      search: "",
     };
   }
 
@@ -20,29 +21,32 @@ class App extends React.Component {
       `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${this.state.search}`
     ).then((response) => response.data.objectIDs);
     this.setState({ resultsIds });
-    console.log(resultsIds)
   }; 
 
   getResults = async () => {
-    const results = await Promise.all(this.state.resultsIds.map((id) => Axios.get(
-      `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
-    ).then((response) => response.data))) 
-    console.log(results);
-    
+    if(this.state.resultsIds === null) {
+        console.log('La nature a horreur du vide !')
+    } else {
+      const results = await Promise.all(this.state.resultsIds.slice(0, 10).map((id) => Axios.get(
+        `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
+      ).then((response) => response.data))) 
+      console.log(results);
+    }
   }
 
-  componentDidMount() {
-    this.searchIds()
-    }
+  handleChange = (event) => {
+    const search =  event.target.value
+    this.setState({ search });
+  }
 
 
   render() {
     return (
       <Router>
         <div className="App">
-          <h1>Museum Search</h1>
-          <button onClick={this.getResults}>Get Results</button>
-        </div>
+          <img src={require('./images/Logo.png')} className="logo" alt="Logo Museum Search" />
+          <Search search={this.state.search} handleChange={this.handleChange} onClick={this.searchIds}/>
+        </div>  
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/:id" component={Details} />
