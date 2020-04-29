@@ -2,10 +2,14 @@
   display: flex;
   flex-direction: column-reverse ;
   justify-content: space-around;
+  width: 100vw;
 }
 
 .info-details {
-  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .img-details img{
@@ -23,6 +27,10 @@
   padding: 0.5em 1em;
   margin: 2em auto 2em;
   transition: box-shadow 0.2s;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button:hover, .button:focus, .button:active {
@@ -32,5 +40,14 @@
 }
 
 @media screen and (min-width: 740px) {
-  
+  .containerDetail {
+    flex-direction: row;
+    font-size: 1.5em;
+  }
+  .img-details{
+    flex: 1;
+  }
+  .info-details {
+    flex: 1;
+  }
 }

@@ -52,13 +52,13 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className="App">
+{/*         <div className="App">
           <img
             src={require("./images/Logo.png")}
             className="logo"
             alt="Logo Museum Search"
           />
-        </div>
+        </div> */}
         <Switch>
           <Route exact path="/">
             <Home
