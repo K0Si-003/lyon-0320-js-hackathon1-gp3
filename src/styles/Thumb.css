@@ -1,8 +1,4 @@
-.Thumbnail {
-    box-shadow: var(--shadow);
-}
-
-.img-hov {
+    .img-hov {
     font-family: 'Source Sans Pro', sans-serif;
     position: relative;
     overflow: hidden;
