@@ -48,22 +48,23 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className="App"></div>
-        <Switch>
-          <Route exact path="/">
-            <Home
-              {...this.state}
-              onLoad={this.getResults}
-              onClick={this.searchIds}
-              handleChange={this.handleChange}
+        <div className="App">
+          <Switch>
+            <Route exact path="/">
+              <Home
+                {...this.state}
+                onLoad={this.getResults}
+                onClick={this.searchIds}
+                handleChange={this.handleChange}
+              />
+            </Route>
+            <Route
+              exact
+              path="/details/:id"
+              render={(routeProps) => <Details {...routeProps} />}
             />
-          </Route>
-          <Route
-            exact
-            path="/details/:id"
-            render={(routeProps) => <Details {...routeProps} />}
-          />
-        </Switch>
+          </Switch>
+        </div>
       </Router>
     );
   }
