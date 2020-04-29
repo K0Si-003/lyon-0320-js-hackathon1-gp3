@@ -1,4 +1,6 @@
-
+.Thumbnail {
+    box-shadow: var(--shadow);
+}
 
 .img-hov {
     font-family: 'Source Sans Pro', sans-serif;
