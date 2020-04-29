@@ -5,11 +5,30 @@
 }
 
 .info-details {
-margin: 50px;;
+  margin: 50px;
 }
 
-.img-details {
+.img-details img{
+  width: 80%;
+}
+.img-details{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.button {
+  background-color: white;
+  border : 2px solid #373737;
+  padding: 0.5em 1em;
+  margin: 2em auto 2em;
+  transition: box-shadow 0.2s;
+}
+
+.button:hover, .button:focus, .button:active {
+  color: white;
+  background-color: #373737;
+  box-shadow: 0px 0px 0px 5px #373737;
 }
 
 @media screen and (min-width: 740px) {

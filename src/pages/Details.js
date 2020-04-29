@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/Details.css';
+import { Link } from 
 
 const Details = (props) => {
   return (
@@ -13,8 +14,9 @@ const Details = (props) => {
           <p>props.item.objectURL</p>
         </section>
         <section className='img-details'>
-          <img src="props.item.primaryImage" alt="props.item.title"></img>
+          <img src="https://images.metmuseum.org/CRDImages/es/original/59669.jpg" alt="props.item.title"></img>
         </section>
+        <Link className='button'>Go back to results</Link>
       </div>
   )
 };
