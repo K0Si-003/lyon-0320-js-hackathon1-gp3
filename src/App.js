@@ -9,27 +9,39 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Results: [],
+      resultsIds: [],
+      results :[],
       search: "sunflowers",
     };
   }
 
-  searchIds = async () => {
-    const Results = await Axios.get(
+   searchIds = async () => {
+    const resultsIds = await Axios.get(
       `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${this.state.search}`
     ).then((response) => response.data.objectIDs);
-    this.setState({ Results });
-  };
+    this.setState({ resultsIds });
+    console.log(resultsIds)
+  }; 
+
+  getResults = async () => {
+    const results = await Promise.all(this.state.resultsIds.map((id) => Axios.get(
+      `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
+    ).then((response) => response.data))) 
+    console.log(results);
+    
+  }
 
   componentDidMount() {
-    this.searchIds();
-  }
+    this.searchIds()
+    }
+
 
   render() {
     return (
       <Router>
         <div className="App">
           <h1>Museum Search</h1>
+          <button onClick={this.getResults}>Get Results</button>
         </div>
         <Switch>
           <Route exact path="/" component={Home} />
