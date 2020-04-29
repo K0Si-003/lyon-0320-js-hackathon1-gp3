@@ -1,24 +1,24 @@
-import React from "react";
-import Thumb from "./Thumb";
-import { Link } from "react-router-dom";
-import "../styles/ThumbList.css";
+import React from 'react';
+import Thumb from './Thumb';
+import { Link } from 'react-router-dom';
+import '../styles/ThumbList.css';
 import Loader from './Loader';
 
 class ThumbList extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {};
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.props.method();
   }
 
-  render() {
+  render () {
     const { items } = this.props;
     if (items !== null) {
       return (
-        <div className="ThumbList">
+        <div className='ThumbList'>
           {items.map((item) => (
             <Link to={`/details/${item.objectID}`} key={item.objectID}>
               <Thumb src={item.primaryImageSmall} title={item.title} />
