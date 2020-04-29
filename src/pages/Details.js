@@ -3,6 +3,7 @@ import "../styles/Details.css";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import Header from "../components/Header";
+import Loader from '../components/Loader';
 
 class Details extends Component {
   constructor(props) {
@@ -28,7 +29,12 @@ class Details extends Component {
   render() {
     const item = this.state.item;
     if (this.state.item === null) {
-      return <p>Loading...</p>;
+      return (
+        <header>
+          <Header />;
+          <Loader />;
+        </header>
+      )
     } else {
       return (
         <Fragment>

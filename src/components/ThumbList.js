@@ -2,6 +2,7 @@ import React from "react";
 import Thumb from "./Thumb";
 import { Link } from "react-router-dom";
 import "../styles/ThumbList.css";
+import Loader from './Loader';
 
 class ThumbList extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class ThumbList extends React.Component {
         </div>
       );
     } else {
-      return <p>Loading ...</p>;
+      return <Loader />;
     }
   }
 }
