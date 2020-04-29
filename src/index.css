@@ -28,10 +28,15 @@
 .link {
   font-size: 16px;
   font-weight: 400;
+  color: #4F99FC;
+  text-decoration: none;
+  transition-duration: 0.2s ;
 }
 
 .link:hover {
-  color: black;
+  color: rgb(35, 130, 255);
+  font-weight: 400;
+  text-decoration: underline;
 }
 
 body {

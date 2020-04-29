@@ -42,7 +42,14 @@ class Details extends Component {
               <p>{item.objectDate}</p>
               <p>{item.dimensions}</p>
               <p>{`${item.geographyType} ${item.country}`}</p>
-              <p>{item.objectURL}</p>
+              <a
+                href={item.objectURL}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="link"
+              >
+                Full Details
+              </a>
             </section>
             <section className="img-details">
               <img src={item.primaryImageSmall} alt={item.title}></img>
