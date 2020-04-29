@@ -5,7 +5,7 @@ import '../styles/Loader.css';
 const Loader = (props) => {
   return (
     <div className='loader-container'>
-      <Roller color='#121212' />;
+      <Roller color='#121212' />
     </div>
   )
 };
