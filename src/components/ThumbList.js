@@ -11,7 +11,7 @@ class ThumbList extends React.Component {
   }
   
   render() { 
-    const {method, items} = this.props;
+    const {items} = this.props;
     if(items !== null) {
       return items.map(item => <p>{item.title}</p>)
     } else {
