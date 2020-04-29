@@ -1,23 +1,28 @@
 import React from 'react';
+import Thumb from './Thumb';
+import {Link} from 'react-router-dom';
 
 class ThumbList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {  }
+    this.state = {
+
+    }
   }
-  
+
   componentDidMount(){
     this.props.method()
   }
-  
-  render() { 
+
+  render() {
     const {method, items} = this.props;
     if(items !== null) {
-      return items.map(item => <p>{item.title}</p>)
+      console.log(items)
+      return items.map(item => <Link to={`/${item.objectID}`} > <Thumb key={item.objectID} src={item.primaryImageSmall} title={items.title}></Thumb> </Link> )
     } else {
       return <p>Loading ...</p>
     }
   }
 }
- 
+
 export default ThumbList;
