@@ -34,9 +34,6 @@ class Details extends Component {
         <Fragment>
           <header>
             <Header />
-            <h1 className="title baseline">
-              Find your favorite art piece !<br /> Use the search below :
-            </h1>
           </header>
           <div className="containerDetail">
             <section className="info-details">
