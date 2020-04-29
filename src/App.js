@@ -4,6 +4,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 import Search from './components/Search';
+import ThumbList from './components/ThumbList';
 import Axios from "axios";
 
 class App extends React.Component {
@@ -11,8 +12,10 @@ class App extends React.Component {
     super(props);
     this.state = {
       resultsIds: null,
-      results :[],
+      results :null,
       search: "",
+      onSearch: false
+
     };
   }
 
@@ -20,25 +23,26 @@ class App extends React.Component {
     const resultsIds = await Axios.get(
       `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${this.state.search}`
     ).then((response) => response.data.objectIDs);
-    this.setState({ resultsIds });
+    this.setState({ resultsIds, onSearch: true });
   }; 
 
   getResults = async () => {
     if(this.state.resultsIds === null) {
         console.log('La nature a horreur du vide !')
+        this.setState({onSearch: false})
     } else {
       const results = await Promise.all(this.state.resultsIds.slice(0, 10).map((id) => Axios.get(
         `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
       ).then((response) => response.data))) 
       console.log(results);
+      this.setState({results})
     }
   }
 
   handleChange = (event) => {
     const search =  event.target.value
-    this.setState({ search });
+    this.setState({ search, onSearch: false });
   }
-
 
   render() {
     return (
@@ -46,6 +50,8 @@ class App extends React.Component {
         <div className="App">
           <img src={require('./images/Logo.png')} className="logo" alt="Logo Museum Search" />
           <Search search={this.state.search} handleChange={this.handleChange} onClick={this.searchIds}/>
+          {this.state.onSearch && this.state.resultsIds !== null ? <ThumbList items={this.state.results} method={this.getResults}/> : <p>Error</p>}
+
         </div>  
         <Switch>
           <Route exact path="/" component={Home} />
