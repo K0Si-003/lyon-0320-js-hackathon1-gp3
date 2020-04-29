@@ -1,12 +1,16 @@
 import React from 'react';
+import './Thumb.css';
 
 const Thumb = ({id, title, src}) =>{
 
   return(
     <div className="ThumbNail"  key={id}>
-      <h2> <span className='ThumbTitle'>{title}</span> </h2>
-      <div className="ThumbOverlay"/>
+      <figure className="img-hov">
       <img className='ThumbImg' src={src} alt={title}/>
+        <figcaption>
+          <h3 className='ThumbTitle'>{title}</h3>
+        </figcaption>
+    </figure>
     </div>
   )
 }

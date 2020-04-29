@@ -17,7 +17,7 @@ class ThumbList extends React.Component {
     const {items} = this.props;
     if(items !== null) {
       console.log(items)
-      return items.map(item => <Link to={`/${item.objectID}`} > <Thumb key={item.objectID} src={item.primaryImageSmall} title={items.title}/> </Link> )
+      return items.map(item => <Link to={`/details/${item.objectID}`} > <Thumb key={item.objectID} src={item.primaryImageSmall} title={item.title}/> </Link> )
     } else {
       return <p>Loading ...</p>
     }
