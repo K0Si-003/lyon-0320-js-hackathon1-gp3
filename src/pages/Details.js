@@ -40,9 +40,6 @@ class Details extends Component {
         <Fragment>
           <header>
             <Header />
-            <h1 className="title baseline">
-              Find your favorite art piece !<br /> Use the search below :
-            </h1>
           </header>
           <div className="containerDetail">
             <section className="info-details">
@@ -51,7 +48,14 @@ class Details extends Component {
               <p>{item.objectDate}</p>
               <p>{item.dimensions}</p>
               <p>{`${item.geographyType} ${item.country}`}</p>
-              <p>{item.objectURL}</p>
+              <a
+                href={item.objectURL}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="link"
+              >
+                Full Details
+              </a>
             </section>
             <section className="img-details">
               <img src={item.primaryImageSmall} alt={item.title}></img>
