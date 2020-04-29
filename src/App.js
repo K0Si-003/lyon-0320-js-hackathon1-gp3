@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
-import Search from "./components/Search";
-import ThumbList from "./components/ThumbList";
 import Axios from "axios";
 
 class App extends React.Component {
