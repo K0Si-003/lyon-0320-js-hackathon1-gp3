@@ -25,7 +25,6 @@ class App extends React.Component {
 
   getResults = async () => {
     if (this.state.resultsIds === null) {
-      console.log("La nature a horreur du vide !");
       this.setState({ onSearch: false });
     } else {
       const results = await Promise.all(
@@ -37,7 +36,6 @@ class App extends React.Component {
             ).then((response) => response.data)
           )
       );
-      console.log(results);
       this.setState({ results });
     }
   };

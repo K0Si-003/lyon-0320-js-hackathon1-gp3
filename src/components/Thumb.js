@@ -1,21 +1,17 @@
-import React from 'react';
-import '../styles/Thumb.css';
+import React from "react";
+import "../styles/Thumb.css";
 
-const Thumb = ({id, title, src}) =>{
-
-  return(
-
-
-
-    <div className="ThumbNail"  key={id}>
+const Thumb = ({ title, src }) => {
+  return (
+    <div className="ThumbNail">
       <figure className="img-hov">
-      <img className='ThumbImg' src={src} alt={title}/>
+        <img className="ThumbImg" src={src} alt={title} />
         <figcaption>
-          <h3 className='ThumbTitle'>{title}</h3>
+          <h3 className="ThumbTitle">{title}</h3>
         </figcaption>
-    </figure>
+      </figure>
     </div>
-  )
-}
+  );
+};
 
-export default Thumb ;
+export default Thumb;

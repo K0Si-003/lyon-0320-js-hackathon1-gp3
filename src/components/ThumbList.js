@@ -16,17 +16,11 @@ class ThumbList extends React.Component {
   render() {
     const { items } = this.props;
     if (items !== null) {
-      console.log(items);
       return (
         <div className="ThumbList">
           {items.map((item) => (
-            <Link to={`/details/${item.objectID}`}>
-              {" "}
-              <Thumb
-                key={item.objectID}
-                src={item.primaryImageSmall}
-                title={item.title}
-              />{" "}
+            <Link to={`/details/${item.objectID}`} key={item.objectID}>
+              <Thumb src={item.primaryImageSmall} title={item.title} />
             </Link>
           ))}
         </div>
