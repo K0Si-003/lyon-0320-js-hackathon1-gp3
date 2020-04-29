@@ -50,13 +50,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className="App">
-          <img
-            src={require("./images/Logo.png")}
-            className="logo"
-            alt="Logo Museum Search"
-          />
-        </div>
+        <div className="App"></div>
         <Switch>
           <Route exact path="/">
             <Home
