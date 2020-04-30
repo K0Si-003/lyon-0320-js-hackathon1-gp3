@@ -10,6 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       resultsIds: null,
+      resultsIdsFix: null,
       results: null,
       search: "",
       onSearch: false,
@@ -24,14 +25,12 @@ class App extends React.Component {
   };
 
   getResults = async () => {
-    const lastID = Math.floor(Math.random() * this.state.resultsIds.length);
-    const firstID = lastID - 10;
     if (this.state.resultsIds === null) {
       this.setState({ onSearch: false });
     } else {
       const results = await Promise.all(
         this.state.resultsIds
-          .slice(this.state.resultsIds.length > 10 ? firstID : 0, this.state.resultsIds.length > 10 ? lastID : this.state.resultsIds.length)
+          .slice(0, 10)
           .map((id) =>
             Axios.get(
               `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
