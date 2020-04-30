@@ -2,6 +2,7 @@ import React from 'react';
 import Search from '../components/Search';
 import ThumbList from '../components/ThumbList';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import '../styles/Home.css';
 
 const Home = ({
@@ -29,6 +30,7 @@ const Home = ({
           <img className='gif-home'src='https://media.giphy.com/media/PmoyprrDzmpOVtFWJX/giphy.gif' alt='beautiful gif' />
         )}
       </main>
+      <Footer />
     </>
   );
 };
