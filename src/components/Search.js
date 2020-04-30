@@ -4,7 +4,7 @@ import "../styles/Search.css";
 const Search = ({ search, handleChange, onClick }) => {
   return (
     <div className="search">
-      <input
+      <input 
         type="text"
         placeholder="Find your Jewel"
         value={search}
