@@ -1,12 +1,12 @@
-import React from "react";
-import "../styles/Search.css";
+import React from 'react';
+import '../styles/Search.css';
 
 const Search = ({ search, handleChange, onClick }) => {
   return (
-    <div className="search">
+    <div className='search'>
       <input
-        type="text"
-        placeholder="Find your Jewel"
+        type='text'
+        placeholder='Find your Jewel'
         value={search}
         onChange={handleChange}
       />
