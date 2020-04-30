@@ -31,6 +31,18 @@ const Home = ({
         />
         {onSearch && resultsIds !== null ? (
           <ThumbList items={results} method={onLoad} />
+        ) : onSearch && resultsIds === null ? (
+          <>
+            <span className="alert">
+              Your search was unsuccessful !<br />
+              Try again ...
+            </span>
+            <img
+              className="gif-home"
+              src="https://media.giphy.com/media/PmoyprrDzmpOVtFWJX/giphy.gif"
+              alt="beautiful gif"
+            />
+          </>
         ) : (
           <img
             className="gif-home"
