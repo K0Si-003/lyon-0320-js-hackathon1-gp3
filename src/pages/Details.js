@@ -3,6 +3,7 @@ import "../styles/Details.css";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import Header from "../components/Header";
+import Loader from '../components/Loader';
 
 class Details extends Component {
   constructor(props) {
@@ -28,15 +29,17 @@ class Details extends Component {
   render() {
     const item = this.state.item;
     if (this.state.item === null) {
-      return <p>Loading...</p>;
+      return (
+        <header>
+          <Header />;
+          <Loader />;
+        </header>
+      )
     } else {
       return (
         <Fragment>
           <header>
             <Header />
-            <h1 className="title baseline">
-              Find your favorite art piece !<br /> Use the search below :
-            </h1>
           </header>
           <div className="containerDetail">
             <section className="info-details">
@@ -45,7 +48,14 @@ class Details extends Component {
               <p>{item.objectDate}</p>
               <p>{item.dimensions}</p>
               <p>{`${item.geographyType} ${item.country}`}</p>
-              <p>{item.objectURL}</p>
+              <a
+                href={item.objectURL}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="link"
+              >
+                Full Details
+              </a>
             </section>
             <section className="img-details">
               <img src={item.primaryImageSmall} alt={item.title}></img>

@@ -6,6 +6,12 @@ h1.title.baseline {
   font-size: 20px;
 }
 
+.gif-home {
+  display: block;
+  margin: 0 auto;
+  box-shadow: var(--shadow);
+}
+
 @media only screen and (min-width: 768px){
   h1.title.baseline {
     font-size: 30px;

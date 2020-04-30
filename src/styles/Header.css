@@ -2,6 +2,8 @@ img.logo {
   display: block;
   width: 230px;
   margin: 30px auto;
+  padding-bottom: 10px;
+  box-shadow: var(--shadow);
 }
 
 @media only screen and (min-width: 768px){
