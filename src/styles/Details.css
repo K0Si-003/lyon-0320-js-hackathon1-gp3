@@ -61,6 +61,8 @@
   .containerDetail {
     flex-direction: row;
     font-size: 1.5em;
+    align-items: flex-start;
+    margin-top: 80px;
   }
   .img-details{
     flex: 1;
