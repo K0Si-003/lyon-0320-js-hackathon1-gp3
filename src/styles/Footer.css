@@ -1,0 +1,24 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  margin: 50px 40px 0;
+}
+
+.footer p {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer a {
+  margin: 0 5px;
+}
+
+.link-footer {
+  color: #4F99FC;
+  text-decoration: none;
+}
+
+.link-footer:hover, .link-footer:focus, .link-footer:active {
+  color: #3C59E6;
+}
