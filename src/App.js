@@ -42,7 +42,12 @@ class App extends React.Component {
 
   handleChange = (event) => {
     const search = event.target.value;
-    this.setState({ search, onSearch: false });
+    this.setState({ search, onSearch: false, resultsIds: null, results: null });
+  };
+
+  onSubmitForm = (e) => {
+    e.preventDefault();
+    this.searchIds();
   };
 
   render() {
@@ -56,6 +61,7 @@ class App extends React.Component {
                 onLoad={this.getResults}
                 onClick={this.searchIds}
                 handleChange={this.handleChange}
+                onSubmit={this.onSubmitForm}
               />
             </Route>
             <Route
