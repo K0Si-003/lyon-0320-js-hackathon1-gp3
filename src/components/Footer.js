@@ -6,7 +6,11 @@ const coffeeMug = (<svg width='22px' height='22px' aria-hidden='true' focusable=
 const Footer = () => {
   return (
     <footer className='footer'>
-      <p className='content'>Code with <a href='https://youtu.be/lc8RFPZUkiQ?t=21' target='_blank' rel='noopener noreferrer' className='link-footer'>&nbsp;{coffeeMug}&nbsp;</a>, from <a className='link' href='https://www.wildcodeschool.com/fr-FR' target='_blank' rel='noopener noreferrer'><strong>Wild Code School</strong></a>, with help of <a className='link' href='https://metmuseum.github.io/' target='_blank' rel='noopener noreferrer'><strong>MET Museum API</strong></a></p>
+      <div>
+        <p className='content coffee-p'>Code with <a href='https://youtu.be/lc8RFPZUkiQ?t=21' target='_blank' rel='noopener noreferrer' className='link-footer'>&nbsp;{coffeeMug}&nbsp;</a></p>
+        <p className='content'>from <a className='link' href='https://www.wildcodeschool.com/fr-FR' target='_blank' rel='noopener noreferrer'><strong>Wild Code School</strong></a></p>
+        <p className='content'>with help of <a className='link' href='https://metmuseum.github.io/' target='_blank' rel='noopener noreferrer'><strong>MET Museum API</strong></a></p>
+      </div>
     </footer>
   );
 };

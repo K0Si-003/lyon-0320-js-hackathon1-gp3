@@ -4,10 +4,11 @@
   margin: 50px 40px 0;
 }
 
-.footer p {
+.footer div {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .footer a {
@@ -24,4 +25,18 @@
   color: rgb(35, 130, 255);
 }
 
+.coffee-p {
+  display: flex;
+  align-items: center;
+}
 
+@media screen and (min-width: 740px) {
+  .footer div {
+    flex-direction: row;
+    align-items: center;
+  }
+  .coffee-p {
+    display: flex;
+    align-items: center;
+  }
+}
