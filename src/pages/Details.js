@@ -46,7 +46,7 @@ class Details extends Component {
               <h3 className='title title-details'>{item.title}</h3>
               <p>{item.repository}</p>
 
-              <p className={(item.objectDate===null)?"showDateNone": ""}>Date : {item.objectDate.toString().charAt(0).toUpperCase()+item.objectDate.substring(1).toLowerCase()}</p>
+              <p className={(item.objectDate.length===0)?"showDateNone": ""}>Date : {item.objectDate.toString().charAt(0).toUpperCase()+item.objectDate.substring(1).toLowerCase()}</p>
               <p>{item.dimensions}</p>
               <p>{`${item.geographyType} ${item.country}`}</p>
               <a
