@@ -17,8 +17,9 @@
 .link-footer {
   color: #4F99FC;
   text-decoration: none;
+  padding-top: 5px;
 }
 
 .link-footer:hover, .link-footer:focus, .link-footer:active {
-  color: #3C59E6;
+  color: rgb(35, 130, 255);
 }
