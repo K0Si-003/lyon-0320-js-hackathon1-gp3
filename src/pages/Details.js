@@ -45,7 +45,7 @@ class Details extends Component {
             <section className="info-details">
               <h3>{item.title}</h3>
               <p>{item.repository}</p>
-              <p>{item.objectDate}</p>
+              <p>Date : {item.objectDate.toString().charAt(0).toUpperCase()+item.objectDate.substring(1).toLowerCase()}</p>
               <p>{item.dimensions}</p>
               <p>{`${item.geographyType} ${item.country}`}</p>
               <a
