@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Axios from "axios";
 import Header from "../components/Header";
 import Loader from '../components/Loader';
+import Footer from '../components/Footer'
 
 class Details extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class Details extends Component {
           </header>
           <div className="containerDetail">
             <section className="info-details">
-              <h3>{item.title}</h3>
+              <h3 className='title title-details'>{item.title}</h3>
               <p>{item.repository}</p>
               <p>Date : {item.objectDate.toString().charAt(0).toUpperCase()+item.objectDate.substring(1).toLowerCase()}</p>
               <p>{item.dimensions}</p>
@@ -52,7 +53,7 @@ class Details extends Component {
                 href={item.objectURL}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="link"
+                className="link full-details"
               >
                 Full Details
               </a>
@@ -64,6 +65,7 @@ class Details extends Component {
           <Link to="/" className="button">
             Go back to results
           </Link>
+          <Footer />  
         </Fragment>
       );
     }
