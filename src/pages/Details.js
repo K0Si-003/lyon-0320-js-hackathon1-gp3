@@ -20,7 +20,6 @@ class Details extends Component {
     )
       .then((response) => response.data)
       .then((data) => data);
-    console.log(item);
     this.setState({ item });
   };
   componentDidMount() {
