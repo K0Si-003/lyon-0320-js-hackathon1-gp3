@@ -5,6 +5,10 @@
   width: 100vw;
 }
 
+.showDateNone{
+  display: none;
+}
+
 .info-details {
   display: flex;
   flex-direction: column;

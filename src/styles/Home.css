@@ -6,15 +6,15 @@ h1.title.baseline {
   font-size: 20px;
 }
 
-.gif-home {
+.gif-home {  
   display: block;
   margin: 0 auto;
   box-shadow: var(--shadow);
-   border: 1px solid #ddd;
+  border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
   
-  
+
 }
 
 @media only screen and (min-width: 768px){
