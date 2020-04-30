@@ -10,10 +10,15 @@
   flex-wrap: wrap;
 }
 
-
 .footer a {
-  text-decoration: none;
   margin: 0 5px;
 }
 
+.link-footer {
+  color: #4F99FC;
+  text-decoration: none;
+}
 
+.link-footer:hover, .link-footer:focus, .link-footer:active {
+  color: #3C59E6;
+}
